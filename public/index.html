@@ -267,6 +267,7 @@
 
         const submitBtn = document.querySelector("#Submit");
         const errordiv = document.querySelector("#error");
+        const baseURL = 'https://hr-rana-contribution.vercel.app'
         var errorText = ""
         var LoginHandler = (event) => {
             event.preventDefault();
@@ -275,7 +276,7 @@
             var password = document.getElementById("password").value;
 
 
-            fetch("http://localhost:3000/login_user", {
+            fetch(`${baseURL}/login_user`, {
                 method: "POST",
                 headers: {
                     'content-type': "application/json",
@@ -338,7 +339,7 @@
         function deleteItem(itemId) {
             var ResponseData = "";
             if (confirm("Do you want to delete?") == true) {
-                fetch(`http://localhost:3000/deleteImage/${itemId}`, {
+                fetch(`${baseURL}/deleteImage/${itemId}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

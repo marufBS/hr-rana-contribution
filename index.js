@@ -8,13 +8,11 @@ const path = require('path')
 
 
 
-
-
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-app.use('/static', express.static(path.join(__dirname, 'public')));
+app.use('/', express.static(path.join(__dirname, 'public')));
 
 // Serve the index.html file directly
 app.get('/', (req, res) => {
@@ -23,18 +21,7 @@ app.get('/', (req, res) => {
 
 
 
-
-
 app.use("", router)
-
-
-
-
-
-
-
-
-
 
 
 
